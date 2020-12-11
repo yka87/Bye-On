@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.4"
+        android:id="@+id/imageViewInput"
+        app:srcCompat="@drawable/ic_image"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.4"
+        android:id="@+id/imageViewOutput"/>
+
+    <EditText
+        android:id="@+id/edit_pet_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your pet name [Ex: Ondung (2007-2020)]"
+        android:imeOptions="actionDone"/>
+
+    <Button
+        android:id="@+id/btn_getname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Store Pet Name" />
+    <!--        android:onClick="getPetName"-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.06"
+        android:orientation="horizontal">
+
+        <SeekBar
+            android:id="@+id/seekBar_threshold1"
+            android:layout_width="363dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.9" />
+
+        <TextView
+            android:id="@+id/textView_threshold1"
+            android:layout_width="162dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1" />
+
+    </LinearLayout>
+<!--    <LinearLayout-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_weight="0.06"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:orientation="horizontal">-->
+<!--        <SeekBar-->
+<!--            android:id="@+id/seekBar_threshold2"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="0.9"-->
+<!--            android:layout_height="match_parent"/>-->
+<!--        <TextView-->
+<!--            android:id="@+id/textView_threshold2"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="0.1"-->
+<!--            android:layout_height="match_parent" />-->
+
+<!--    </LinearLayout>-->
+
+    <Button
+        android:id="@+id/btnProcess"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:text="Process Image" />
+
+    <Button
+        android:id="@+id/btnOpen"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:text="Open new Image" />
+
+    <Button
+        android:id="@+id/btnUpload"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:text="Upload to Bye-On" />
+
+
+
+</LinearLayout>

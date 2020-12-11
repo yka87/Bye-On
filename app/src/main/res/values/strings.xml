@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">ByeON</string>
+    <string name="author">Laine Yeoran Kim</string>
+    <string name="skip">SKIP</string>
+    <string name="play">Upload</string>
+    <string name="option">Setting</string>
+    <string name="help">Help</string>
+    <string name="help_title">HELP SCREEN</string>
+    <string name="help_content">
+        "* How to use the app\n"
+        " - In 'Upload' menu, upload your beloved pet's photo to share with others. \n"
+        " - You'll receive notification of random pictures of other's deceased lovely pets. \n"
+        " - In 'Setting' menu, you can adjust notification options.\n"
+        " - Grief and miss together. \n"
+        "\n"
+
+        "* Source - All clip arts are found at <a href="http://clipart-library.com" target="_top">clipart-library.com</a>\n"  "     except paw icon from <a href="https://www.seekpng.com/ipng/u2q8q8r5t4u2e6e6_cat-paw-print-pink/" target="_top">seekpng.com</a>\n" "* In memory of the beloved cat Ondung (2007-2020)\n"</string>
+        "\n"
+
+    <string name="source_link1">http://clipart-library.com</string>
+    <string name="source_link2">https://www.seekpng.com</string>
+    <string name="edge">Process image</string>
+
+<!--    <string name="app_name">Notification Scheduler</string>-->
+    <string name="seconds">%1$d s</string>
+    <string name="time_int">How often to get photos</string>
+    <string name="none">None</string>
+    <string name="any">Any</string>
+    <string name="wifi">Wifi</string>
+    <string name="requires">Requires:</string>
+    <string name="device_idle">Device Idle</string>
+    <string name="device_charging">Device Charging</string>
+    <string name="override_deadline">Override Deadline:</string>
+    <string name="not_set">Not set</string>
+    <string name="schedule_job">Schedule Notification</string>
+    <string name="send_job">Send Right Now (Once)</string>
+    <string name="cancel_jobs">Cancel Notification</string>
+    <string name="job_service">Job Service</string>
+    <string name="job_running">Your Job ran to completion!</string>
+    <string name="job_service_notification">Job Service notification</string>
+    <string name="notification_channel_description">Notifications from Job Service</string>
+    <string name="job_scheduled">Job Scheduled, will run when the constraints are met</string>
+    <string name="no_constraint_toast">Please set at least one constraint</string>
+    <string name="jobs_canceled">Jobs Canceled</string>
+
+    <string name="no_interval_toast">Please set a periodic interval</string>
+    <string name="notify_title">Notification Setting</string>
+    <string name="one_hr">1 Hour</string>
+    <string name="four_hr">4 Hour</string>
+    <string name="eight_hr">8 Hour</string>
+    <string name="once_day">Once a day</string>
+    <string name="periodic_interval">Periodic:</string>
+
+    <string name="notification_channel_id">channel_1</string>
+    <string name="notification_channel_name">From Bye-On</string>
+
+</resources>

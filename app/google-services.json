@@ -1,0 +1,87 @@
+{
+  "project_info": {
+    "project_number": "501051137654",
+    "project_id": "bye-on",
+    "storage_bucket": "bye-on.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501051137654:android:212389bd72ad82113e0957",
+        "android_client_info": {
+          "package_name": "com.example.fcmandroidtest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501051137654-pm38ie73cpt3pgg9egdjqel0lf5qdch2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fcmandroidtest",
+            "certificate_hash": "c86a08fec6474e49c53408b2c22f90069cfb4a49"
+          }
+        },
+        {
+          "client_id": "501051137654-u8sljjncltuojbam7ssn4ll6depauktc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRysiEehsRb-PtF3AdvBM9S-0SliZ8i7Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501051137654-u8sljjncltuojbam7ssn4ll6depauktc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501051137654:android:e555b4f1199de6363e0957",
+        "android_client_info": {
+          "package_name": "com.example.opencv"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501051137654-u8sljjncltuojbam7ssn4ll6depauktc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRysiEehsRb-PtF3AdvBM9S-0SliZ8i7Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501051137654-u8sljjncltuojbam7ssn4ll6depauktc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "message": {
+    "token": "dwbKG6z6RGqr07qVxCZqSM:APA91bFZAkiLkPlpwRr6YefCCvmcg0mKmpKm1tKapUbej64RNUYlxp_O0hvUiNu3Cu0JEhWVhgCuos5qWER7THPOGwM49dW-JdGKAI_abHQ8QdsAHeGYe6A3S3hdTeOM6pVRRwWQkY2G",
+    "android": {
+      "notification": {
+        "body": "This is an FCM notification that displays an image.!",
+        "title": "Bye-On",
+        "image": "url-to-image"
+      }
+    }
+  },
+  "configuration_version": "1"
+}
