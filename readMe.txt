@@ -1,6 +1,6 @@
-##########################################################################################################################
+#########################################################################################################
 1. Goal of the Project 'Bye-On'
-##########################################################################################################################
+#########################################################################################################
 
 - This Android app is for people suffering from pet loss.
 - A user can upload her deceased pet's photo to the server after some image processing.
@@ -10,10 +10,9 @@
 - For now, the app deals with a single device and a single user, and the server storage capacity is limited.
   Functions for multiple user handling are in progress and will be deployed in the future.
 
-
-##########################################################################################################################
+#########################################################################################################
 2. With the Java base, C++ and Python were additionally used.
-##########################################################################################################################
+#########################################################################################################
 
 a) C++ was used to speed up processing images and benefit from the abundant functions in the OpenCV C++ library in the Android environment.
   Also OpenCV C++ library function is more concise than implementation in Java.
@@ -28,15 +27,14 @@ b) Using PyFCM and Pyrebase libraries in Python are versatile tools to handle th
     and the Java client calls the function by requesting the Python server.
     Refer to the XmlPpc_Server.py, and callXmlServer() function in the NotifyActivity in the android java class.
 
-
-##########################################################################################################################
+#########################################################################################################
 3. Deployment technology: Docker Compose + Container
-##########################################################################################################################
+#########################################################################################################
+
 I am sorry, I failed to build docker image of this android project.
 I thought I could make it after successing on  a simple app
 
 
-
-##########################################################################################################################
+#########################################################################################################
 4. Where to check
-##########################################################################################################################
+#########################################################################################################
