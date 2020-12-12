@@ -4,8 +4,8 @@
     <string name="skip">SKIP</string>
     <string name="play">Upload</string>
     <string name="option">Setting</string>
-    <string name="help">Help</string>
-    <string name="help_title">HELP SCREEN</string>
+    <string name="help">About</string>
+    <string name="help_title">ABOUT</string>
     <string name="help_content">
         "* How to use the app\n"
         " - In 'Upload' menu, upload your beloved pet's photo to share with others. \n"

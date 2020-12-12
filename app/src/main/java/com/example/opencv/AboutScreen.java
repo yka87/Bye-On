@@ -1,21 +1,22 @@
 package com.example.opencv;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 /*
- *  HelpActivity displays information about how to use the app
+ *  AboutScreenActivity displays information about how to use the app
  *  and source for the resources used in the app.
  */
-public class HelpActivity extends AppCompatActivity {
+public class AboutScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_help);
+        setContentView(R.layout.activity_about);
         setTextInTextBox();
     }
 
@@ -25,7 +26,7 @@ public class HelpActivity extends AppCompatActivity {
     }
 
     public static Intent makeIntent(Context context) {
-        Intent intent = new Intent(context, HelpActivity.class);
+        Intent intent = new Intent(context, AboutScreen.class);
         return intent;
     }
 }

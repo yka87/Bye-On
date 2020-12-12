@@ -153,29 +153,6 @@ public class ImageActivity extends AppCompatActivity {
             }
         });
 
-//        final TextView textView2 = findViewById(R.id.textView_threshold2);
-//        seekBar2 = findViewById(R.id.seekBar_threshold2);
-//        seekBar2.setProgress(threshold2);
-//        seekBar2.setMax(31);
-//        seekBar2.setMin(0);
-//        seekBar2.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-//            int stepSize = 2;
-//            @Override
-//            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-//                threshold2 = ((int)Math.round(progress/stepSize))*stepSize +1;
-//                textView2.setText(threshold2 + "");
-//                getOutputImage(threshold1, threshold2);
-//            }
-//
-//            @Override
-//            public void onStartTrackingTouch(SeekBar seekBar) {
-//            }
-//
-//            @Override
-//            public void onStopTrackingTouch(SeekBar seekBar) {
-//            }
-//        });
-
         // check if the user was asked for permission
         if (!hasPermissions(PERMISSIONS)) {
             requestNecessaryPermissions(PERMISSIONS);

@@ -26,11 +26,13 @@ import java.util.concurrent.TimeUnit;
 
 import static com.google.firebase.iid.FirebaseInstanceId.getInstance;
 
-// This class manages user selected notification time interval setting,
-// and manage the work to be executed background even when the app is not active.
-// Notification schedule is set by calling python XmlRpc server by Java client from utls.CallServerWorker.class.
-// Code based on [https://developer.android.com/topic/libraries/architecture/workmanager/how-to/managing-work]
-// [https://developer.android.com/training/notify-user/expanded]
+/*
+ This class manages user selected notification time interval setting,
+ and manage the work to be executed background even when the app is not active.
+ Notification schedule is set by calling python XmlRpc server by Java client from utls.CallServerWorker.class.
+ Code based on [https://developer.android.com/topic/libraries/architecture/workmanager/how-to/managing-work]
+ [https://developer.android.com/training/notify-user/expanded]
+ */
 public class NotifyActivity extends AppCompatActivity { //implements TimePickerDialog.OnTimeSetListener{
 
     private int selectedTime;

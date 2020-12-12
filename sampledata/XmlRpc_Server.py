@@ -10,6 +10,8 @@ class RequestHandler(SimpleXMLRPCRequestHandler):
 with SimpleXMLRPCServer(('localhost', 8000), requestHandler=RequestHandler) as server:
     server.register_introspection_functions()
 
+    # This function iterate image files in the server storage, then pick a random one,
+    # and send the url to the client to create notification to the device user
     server.register_function(fcm.request, 'notify')
 
     server.serve_forever()

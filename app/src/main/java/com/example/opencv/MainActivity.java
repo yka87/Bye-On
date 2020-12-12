@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         btnHelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = HelpActivity.makeIntent(MainActivity.this);
+                Intent intent = AboutScreen.makeIntent(MainActivity.this);
                 startActivity(intent);
             }
         });
