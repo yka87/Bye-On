@@ -2,12 +2,17 @@ package com.example.opencv.utils;
 
 import android.content.Context;
 import android.util.Log;
+
 import androidx.annotation.NonNull;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
+
+import com.example.opencv.NotifyActivity;
+
 import org.apache.xmlrpc.XmlRpcException;
 import org.apache.xmlrpc.client.XmlRpcClient;
 import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -25,8 +30,9 @@ public class CallServerWorker extends Worker {
     @NonNull
     @Override
     public Result doWork() {
+        String token = NotifyActivity.token;
         try {
-            callXmlServer();
+            callXmlServer(token);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (XmlRpcException e) {
@@ -35,31 +41,27 @@ public class CallServerWorker extends Worker {
         return Result.success();
     }
 
-    private void callXmlServer() throws MalformedURLException, XmlRpcException {
+    private void callXmlServer(final String token) throws MalformedURLException, XmlRpcException {
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
-                try  {
-                    XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
-                    config.setServerURL( new URL( "http://10.0.2.2:8000/RPC2"));
-                    config.setBasicEncoding("utf-8");
-                    config.setEncoding("utf-8");
+            try  {
+                XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
+                config.setServerURL( new URL( "http://10.0.2.2:8000/RPC2"));
+                config.setBasicEncoding("utf-8");
+                config.setEncoding("utf-8");
 
-                    XmlRpcClient client = new XmlRpcClient();
-                    client.setConfig(config);
-                    Log.e(TAG, "client set?");
+                XmlRpcClient client = new XmlRpcClient();
+                client.setConfig(config);
+                Log.e(TAG, "client set?");
 
-                    Object [] param1 = {"mini"};
-                    String result2 = (String) client.execute("cap", param1);
-                    Log.e(TAG, result2);
+                Object[] paramToken = {token};
+                String succ = (String) client.execute("notify", paramToken);
+                Log.e(TAG, succ);
 
-                    Object[] params = new Object[0];
-                    String result = (String) client.execute("notify", params);
-                    Log.e(TAG, result);
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             }
         });
         thread.start();

@@ -36,11 +36,11 @@ public class NotifyActivity extends AppCompatActivity { //implements TimePickerD
     private int selectedTime;
     public static NotificationManagerCompat notificationManager;
     private final String TAG = "firebase token";
-
+    public static String token;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notify);
+        setContentView(R.layout.activity_notification);
 
         getInstance().getInstanceId().addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
             @Override
@@ -50,7 +50,7 @@ public class NotifyActivity extends AppCompatActivity { //implements TimePickerD
                     return;
                 }
                 // Get new Instance ID token
-                String token = task.getResult().getToken();
+                token = task.getResult().getToken();
                 Log.d(TAG, token);
             }
         });
@@ -58,6 +58,12 @@ public class NotifyActivity extends AppCompatActivity { //implements TimePickerD
         notificationManager = NotificationManagerCompat.from(this);
         setTimeInterval();
         setButtons();
+    }
+
+    public static Intent makeTokenIntent(Context context) {
+        Intent intent = new Intent(context, MainActivity.class);
+        intent.putExtra("Token", token);
+        return intent;
     }
 
     private void setButtons() {

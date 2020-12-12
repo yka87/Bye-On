@@ -1,12 +1,14 @@
 # Code based on [https://github.com/thisbejim/Pyrebase/] [https://medium.com/devmins/firebase-cloud-messaging-api-with-python-6c0755e41eb5]
 import firebase_admin
+from firebase_admin import auth
 import pyrebase
 import requests
 import json
 import random
 
+from firebase_admin import credentials
 serverToken = "AAAAdKj5nnY:APA91bFt4DcPUFPNsVTDmL-tqetLExIXUkx4pBKQaIsU5K6qfVzTat5yTmlTiyAEbhlEXAg71V-2tnHK2tDm80gdbB6xZWn8D95fgVU1JRuV2gp3T3deIkDYwgg72BFyHOB9y5t_AZEY"
-deviceToken = "dwbKG6z6RGqr07qVxCZqSM:APA91bFZAkiLkPlpwRr6YefCCvmcg0mKmpKm1tKapUbej64RNUYlxp_O0hvUiNu3Cu0JEhWVhgCuos5qWER7THPOGwM49dW-JdGKAI_abHQ8QdsAHeGYe6A3S3hdTeOM6pVRRwWQkY2G"
+# deviceToken =     "fU-sFWEcQzmj5gsIA0jZnL:APA91bHQfvMPOSZPrx6kXUTUGdeNXDojQaM5u1sftNI-RIQztxc2Lo8D22q2hEPzKz1gUm0b7wHJhTfF2pr2oRL0DtFj8sA78nNNffuhcrbs8OAWWIhEJiZq3xHE1j-E7Owym5QzobOo"
 
 config = {
     "apiKey": "AIzaSyB0F_1T_tBN1KGXzbqxacaAIHxi3MquyWk",
@@ -17,37 +19,40 @@ config = {
     "messagingSenderId": "501051137654",
     "appId": "1:501051137654:web:9a3cbfd7a9d88d653e0957",
     "measurementId": "G-T4QBY58CL4",
-    "serviceAccount": "C:/Users/seape/PycharmProjects/FCMText/serviceAccountKey.json"
-};
+    "serviceAccount": "C:/Users/seape/AndroidStudioProjects/383polygot/sampledata/serviceAccountKey.json"
+}
 
-default_app = firebase_admin.initialize_app()
+cred = credentials.Certificate("C:/Users/seape/AndroidStudioProjects/383polygot/sampledata/serviceAccountKey.json")
+firebase_admin.initialize_app(cred)
 firebase = pyrebase.initialize_app(config)
-storage = firebase.storage()
+initialized = False
 
-img_url_list = []
-files = storage.list_files()
 
-for file in files:
-    img_url_list.append(storage.child(file.name).get_url(None))
+def request(deviceToken):
+    storage = firebase.storage()
+    files = storage.list_files()
+    img_url_list = []
+    for file in files:
+        img_url_list.append(storage.child(file.name).get_url(None))
 
-img_url = random.choice(img_url_list)
+    img_url = random.choice(img_url_list)
 
-headers = {
-    'Content-Type': 'application/json',
-    'Authorization': 'key=' + serverToken,
-}
+    headers = {
+        'Content-Type': 'application/json',
+        'Authorization': 'key=' + serverToken,
+    }
 
-body = {
-    'notification': {'title': 'Sending push form python script',
-                     'body': img_url
-                     },
-    'to':
-        deviceToken,
-}
+    body = {
+        'notification': {'title': 'Bye-On',
+                         'body': img_url
+                         },
+        'to':
+            deviceToken,
+    }
 
-def request():
     response = requests.post("https://fcm.googleapis.com/fcm/send", headers=headers, data=json.dumps(body))
     print(response.status_code)
+    print(img_url)
     print(response.json())
     return "succ"
 

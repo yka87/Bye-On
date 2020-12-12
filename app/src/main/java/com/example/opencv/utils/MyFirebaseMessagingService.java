@@ -1,12 +1,16 @@
 package com.example.opencv.utils;
 
 import android.app.Notification;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.util.Log;
 import androidx.core.app.NotificationCompat;
+
+import com.example.opencv.NotifyActivity;
 import com.example.opencv.R;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
@@ -14,7 +18,7 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import static com.example.opencv.NotifyActivity.notificationManager;
-import static com.example.opencv.utils.App.CHANNEL_1_ID;
+import static com.example.opencv.utils.CreateChannel.CHANNEL_1_ID;
 
 /*
     This class manages push notification from python server
@@ -59,12 +63,12 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     private void createNotification(String notificationTitle, String notificationContent){
         // create a notification builder object
-//        Intent activityIntent = new Intent(this, NotifyActivity.class);
-//        PendingIntent contentIntent = PendingIntent.getActivity(this,
-//                0, activityIntent, 0);
-//        Intent fullScreenIntent = new Intent(this, MyFirebaseMessagingService.class);
-//        PendingIntent fullScreenPendingIntent = PendingIntent.getActivity(this, 0,
-//                fullScreenIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        Intent activityIntent = new Intent(this, NotifyActivity.class);
+        PendingIntent contentIntent = PendingIntent.getActivity(this,
+                0, activityIntent, 0);
+        Intent fullScreenIntent = new Intent(this, MyFirebaseMessagingService.class);
+        PendingIntent fullScreenPendingIntent = PendingIntent.getActivity(this, 0,
+                fullScreenIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         Bitmap bitmap = getBitmapfromUrl(notificationContent);
@@ -74,13 +78,15 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 .setContentTitle(notificationTitle)
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setSound(defaultSoundUri)
-                .setAutoCancel(false)
+                .setAutoCancel(true)
                 .setLargeIcon(bitmap)
                 .setStyle(new NotificationCompat.BigPictureStyle()
                         .bigPicture(bitmap)
                         .bigLargeIcon(null))
+                .setContentIntent(contentIntent)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
-                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .setCategory(NotificationCompat.CATEGORY_CALL)
+                .setFullScreenIntent(fullScreenPendingIntent, true)
                 .build();
 //        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
 

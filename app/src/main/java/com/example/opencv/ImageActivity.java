@@ -56,9 +56,9 @@ public class ImageActivity extends AppCompatActivity {
     ImageView imageVIewInput, imageViewOutput;
     private Mat img_input, img_output;
     private Bitmap bitmapOutput;
-    private SeekBar seekBar1, seekBar2;
-    private int threshold1 = 15;
-    private int threshold2 = 15;
+    private SeekBar seekBar1;
+    private int threshold1 = 25;
+    private int threshold2 = 25;
     boolean isReady = false;
 
     private EditText editPetName;
@@ -132,7 +132,7 @@ public class ImageActivity extends AppCompatActivity {
         final TextView textView1 = findViewById(R.id.textView_threshold1);
         textView1.setText(threshold1 + " Smooth");
         seekBar1 = findViewById(R.id.seekBar_threshold1);
-        seekBar1.setMax(31);
+        seekBar1.setMax(51);
         seekBar1.setMin(0);
         seekBar1.setProgress(threshold1);
         seekBar1.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
