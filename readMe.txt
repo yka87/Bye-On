@@ -28,3 +28,5 @@ Not yet to be deployed
 
 - For now, the app is in progress and yet to be deployed. The current version deals with a single device and a single user, 
   and the server storage capacity is limited. Functions for multiple user handling are in progress and will be deployed in the future.
+
+- The source code does not include the server credential for privacy issues. 
