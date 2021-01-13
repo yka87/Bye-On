@@ -9,7 +9,7 @@ Project 'Bye-On'
   This app could create a virtual community for the bereaved by pet loss.
 
 ##########################################################################################################################
-2. With the Java base, C++ and Python were additionally used.
+With the Java base, C++ and Python were additionally used.
 ##########################################################################################################################
 
 1) C++ was used to speed up processing images and benefit from the abundant functions in the OpenCV C++ library 
@@ -23,7 +23,7 @@ Project 'Bye-On'
     MyFirebaseMessagingService.java class (app/src/main/java/com/example/opencv/utils/) and NotifyActivity. 
 
 ##########################################################################################################################
-3. Not yet to be deployed
+Not yet to be deployed
 ##########################################################################################################################
 
 - For now, the app is in progress and yet to be deployed. The current version deals with a single device and a single user, 
